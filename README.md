@@ -61,20 +61,27 @@ Overall, React has become a standard tool in modern web development due to its f
 </div>
 
 <div id="state_full_and_state_less">
+
 ### Stateful component and Stateless component:
 
 If the component depends on the state of the component, it is called a **stateful component**.
-**Features:** 1. **Manages State:** Uses useState, useReducer, or other hooks that manage state in functional components.
-In class components, state is managed using this.state and this.setState. 2. **Lifecycle Methods:** In class components, stateful components often use lifecycle methods
+**Features:** 
+1. **Manages State:** Uses useState, useReducer, or other hooks that manage state in functional components.
+In class components, state is managed using this.state and this.setState. 
+2. **Lifecycle Methods:** In class components, stateful components often use lifecycle methods
 (e.g., componentDidMount, componentDidUpdate, componentWillUnmount). In functional components,
-you can achieve similar effects with the useEffect hook. 3. **Dynamic:** Since the component's state can change, the rendered output can also change over time,
+you can achieve similar effects with the useEffect hook. 
+3. **Dynamic:** Since the component's state can change, the rendered output can also change over time,
 making it dynamic.
 
 <img src="./images/statefull_component.png">
 
 If the component is independent of the state of the component then it is called a **stateless component**.
-**Features:** 1. **No State:** Stateless components don't manage or store state internally. 2. **Pure Components:** Often implemented as pure functions, meaning they always produce the same output given
-the same input (props). 3. **Simpler and Reusable:** Since they don't manage state, they're generally simpler and more reusable.
+**Features:** 
+1. **No State:** Stateless components don't manage or store state internally. 
+2. **Pure Components:** Often implemented as pure functions, meaning they always produce the same output given
+the same input (props). 
+3. **Simpler and Reusable:** Since they don't manage state, they're generally simpler and more reusable.
 
 <img src="./images/stateless_component.png">
 
