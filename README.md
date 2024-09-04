@@ -296,29 +296,21 @@ When you call useState, it returns an array with two elements:
 **Syntax**:
 <img src="./images/useStateSyntax.png">
 
-<li> 
-
-**state**: The current state value.</li>
-<li>
-
-**setState**: The function you use to update the state.</li>
-<li>
-
-**initialState**: The initial value of the state, which can be a primitive value, object, array, 
-or any other data type. </li>
+1. **state**: The current state value.
+2. **setState**: The function you use to update the state.
+3. **initialState**: The initial value of the state, which can be a primitive value, object, array, 
+or any other data type. 
 
 ##### Example Usage
 **Basic Counter Example**
 
 <img src="./images/useStateExample1.png">
 
-<li>
 
-**Initial State**: useState(0) initializes the count state variable to 0. </li>
-<li>
+**Initial State**: useState(0) initializes the count state variable to 0. 
 
 **Updating State**: setCount(count + 1) updates the count state variable when the button is clicked, 
-incrementing it by 1.</li>
+incrementing it by 1.
 
 ### Important Points
 **State is Preserved Across Renders**: The value returned by useState is preserved between renders. 
