@@ -24,22 +24,7 @@ that can update and render efficiently in response to data changes without reloa
     Hooks like useState and useEffect allow you to add state management and side effects to functional 
     components without writing classes.
 
-    Example of using Hook:
-
-    import React, { useState } from 'react';
-    <b> Sushma is here </b>
-    function Counter() {
-    const [count, setCount] = useState(0);
-
-    return (
-        <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-            Click me
-        </button>
-        </div>
-    );
-    }
+   <img src="./images/Hooks_example.png" alt="Hooks Example">
 
 
 #### Use Cases for React:
