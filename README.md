@@ -1,9 +1,20 @@
 # React-Js
 
+<li><a href="#details_react">Details about React js</a></li>
+<li><a href="#state_full_and_state_less">StateFull and Stateless component</a></li>
+<li><a href="#controlled_component">Controlled Component and UnControlled Component</a></li>
+<li><a href="#react_fiber">React Fiber</a></li>
+<li><a href="#vdom">Virtual DOM</a></li>
 <li><a href="#reconciliation">Reconciliation</a></li>
 <li><a href="#diffing_algorithm">Diffing algorithm</a></li>
 <li><a href="#use_effect">useEffect Hook</a></li>
 <li><a href="#useState">useState Hook</a></li>
+<li><a href="use_reducer">useReducer Hook</a></li>
+<li><a href="#use_ref">useRef Hook</a></li>
+<li><a href="#use_memo">useMemo Hook</a></li>
+<li><a href="#use_callback">useCallback Hook</a></li>
+<li><a href="#optimization_methods">Optimization Methods of a website in React</a></li>
+<li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
@@ -11,6 +22,7 @@
 
 
 
+<div id="details_react">
 ### Details about React js
 
 **React** is a popular JavaScript library for building user interfaces, particularly for single-page applications
@@ -46,7 +58,9 @@ integration of HTML with JavaScript logic.
 4. Building reusable UI components
 
 Overall, React has become a standard tool in modern web development due to its flexibility, performance, and ease of use.
+</div>
 
+<div id="state_full_and_state_less">
 ### Stateful component and Stateless component:
 
 If the component depends on the state of the component, it is called a **stateful component**.
@@ -64,6 +78,10 @@ the same input (props). 3. **Simpler and Reusable:** Since they don't manage sta
 
 <img src="./images/stateless_component.png">
 
+</div>
+
+<div id="controlled_component">
+
 **Controlled Component**: those components that are controlled by input elements within the form or user input.
 
 1. At first we initialize a state using useState
@@ -74,6 +92,10 @@ the same input (props). 3. **Simpler and Reusable:** Since they don't manage sta
 5. At first we create a ref using useRef.
 6. Attached that ref to the form.
 7. Ref will have an internal handle which update the value of current on changing the value.
+
+</div>
+
+<div id="react_fiber">
 
 **React fiber** is the new implementation or core algorithm of React v16. Which is used to increase the suitability
 areas like gesture, animation, ability to pause, abort work, prioritize the work and divide the work into chunks.
@@ -97,6 +119,9 @@ capabilities.
    catch errors within components.
 5. **Flexible Rendering**: Fiber provides the ability to render asynchronously, allowing React to adjust and optimize
    rendering based on the current state of the application and user interactions.
+</div>
+
+<div id="vdom">
 
 # Virtual DOM
 
@@ -126,24 +151,27 @@ the application and the browser's actual DOM, helping to optimize updates and re
 
 This approach minimizes direct DOM manipulations, making updates more efficient and improving the
 overall performance of the application.
+</div>
 
 <div id="reconciliation">
 
 # Reconciliation
 
 **Reconciliation** is the step that happens between the render function being called and the final elements displayed
-on the screen. This entire process is known are reconciliation. It involves comparing the new Virtual DOM with the
-previous one and efficiently updating the real DOM to reflect any changes. This ensures optimal performance
-by minimizing direct DOM manipulations.
+    on the screen. This entire process is known are reconciliation. It involves comparing the new Virtual DOM with the
+    previous one and efficiently updating the real DOM to reflect any changes. This ensures optimal performance
+    by minimizing direct DOM manipulations.
 
 **How Reconciliation Works**
 
 1. **Rendering Phase**:
 <li>When a component's state or props change, React triggers a re-render of that component.</li>
 <li>The component's render() function (or the functional component itself) returns a new virtual DOM tree.</li>
+
 2. **Comparing the Virtual DOM**:
 <li>React compares the new virtual DOM tree with the previous one (this process is called "diffing").</li>
 <li>It checks for differences between the two trees, such as changes in elements, attributes, or text content.</li>
+
 3. **Updating the DOM**:
 <li>After identifying the differences, React updates only the parts of the actual DOM that have changed.</li>
 <li>This efficient updating minimizes reflows and repaints, leading to better performance.</li>
@@ -321,6 +349,190 @@ The useReducer hook takes two arguments:
    **initialState**: The initial state value or object for the state.
 
    <img src="./images/usereducer.png">
+
+</div>
+
+<div id="use_ref">
+
+## useRef Hook: 
+    The useRef hook in React is used to create and manage mutable references to DOM elements or values across renders
+    without causing re-renders. It provides a way to persist values across renders without causing side 
+    effects or triggering re-renders, which is particularly useful for accessing and interacting 
+    with DOM elements directly or storing values that don't affect rendering.
+**Purpose of useRef**
+1. **Accessing DOM Elements**: Allows direct access to a DOM element for purposes like focusing an input, 
+    measuring size, or performing animations.
+2. **Persisting Values**: Useful for persisting values that should not trigger a re-render when they change, 
+    such as storing previous state values or timers.
+3. **Avoiding Re-renders**: Stores mutable values without causing component re-renders, unlike state which triggers 
+    re-renders on updates.
+**Syntax and Usage**
+The useRef hook returns a mutable object with a current property that can hold any value or reference to a DOM element:
+
+<img src="./images/useRefSyntax.png">
+
+**initialValue**: The initial value to set for the current property. This value can be anything: a DOM node, a value, or null.
+**refContainer.current**: This is where the useRef value is stored.
+
+**Example**
+<img src="./images/userefExample.png">
+
+1. **ref={inputRef}**: Attaches the inputRef to the input element.
+2. **inputRef.current.focus()**: Calls the focus method on the input element when the button is clicked.
+
+### Important Points
+1. **No Re-render on Update**: Unlike state, updating a useRef value does not trigger a re-render of the component.
+2. **Direct DOM Manipulation**: useRef is commonly used for interacting with DOM elements directly, 
+    like focusing an input, triggering animations, or accessing a component’s dimensions.
+3. **Persisting Values Across Renders**: useRef is perfect for storing values that need to persist across 
+    renders but shouldn’t trigger a re-render when they change.
+
+</div>
+
+<div id="use_context">
+
+### useContext Hook
+
+The useContext hook in React is used to access the value of a context that was provided higher up in the component tree.
+Context provides a way to pass data through the component tree without having to pass props down manually at 
+every level, which is particularly useful for global or shared state like themes, authentication, or user settings.
+
+**Purpose of useContext**
+1. **Access Context Values**: It allows functional components to consume context values provided by a 
+    Context.Provider without needing to use a class-based component.
+2. **Avoid Prop Drilling**: Simplifies passing data through many layers of components, avoiding the need 
+    to pass props down manually through intermediate components.
+
+#### Syntax and Usage
+<img src="./images/useContextSyntax.png">
+
+1. **MyContext**: This is the context object that you create using React.createContext().
+2. **contextValue**: This is the current value of the context that is returned by useContext.
+
+#### Example of useContext
+**useAuthContext.js**
+<img src="./images/useContext1.png">
+
+**main.js**
+<img src="./images/useContext2.png">
+
+
+</div>
+
+<div id="use_memo">
+
+### useMemo Hook
+
+The useMemo hook in React is used to optimize performance by memoizing the results of expensive computations 
+so that they are only recalculated when their dependencies change. This can help avoid unnecessary recalculations 
+and improve rendering performance, especially in components that perform heavy calculations.
+
+#### Purpose of useMemo
+1. **Performance Optimization**: It prevents re-computation of values or objects that are costly to calculate by 
+    storing the result and only recalculating it when dependencies change.
+2. **Avoiding Re-Renders**: Helps to prevent unnecessary re-renders of child components that rely on memoized values.
+
+#### Syntax and Usage
+**The useMemo hook takes two arguments**:
+1. A function that returns the value you want to memoize.
+2. A dependency array that determines when the memoized value should be recalculated.
+
+<img src="./images/useMemoSytax.png">
+
+**First Argument**: A function that performs the expensive computation or creates a complex object.
+**Second Argument**: An array of dependencies that the memoized value depends on. The memoized value is recalculated only if one of these dependencies changes.
+
+### Example
+
+**practice.js**
+<img src="./images/useMemoExample1.png">
+
+**main.js**
+<img src="./images/useMemoExample2.png">
+
+
+</div>
+
+<div id="use_callback">
+
+### useCallback Hook
+
+The useCallback hook in React is used to memoize callback functions, ensuring that the same instance of the function 
+is used between renders unless its dependencies change. This can be beneficial for optimizing performance, 
+particularly when passing callbacks to child components or hooks that depend on stable function references.
+
+#### Purpose of useCallback
+1. **Prevent Unnecessary Re-Renders**: By ensuring that a function reference remains stable between renders, 
+    useCallback helps prevent unnecessary re-renders of components that use the function as a prop.
+
+2. **Optimize Performance**: Helps to avoid recreating functions on every render, which can be beneficial 
+    for performance, especially when the function is passed to components that use React.memo or other memoization 
+    techniques.
+
+#### Syntax and Usage
+**The useCallback hook takes two arguments:**
+1. A callback function that you want to memoize.
+2. A dependency array that specifies when the callback function should be recreated.
+
+<img src="./images/useCallbackSyntax.png">
+
+**First Argument**: The callback function that you want to memoize.
+**Second Argument**: An array of dependencies that, when changed, will cause the callback function to be recreated.
+
+#### Example
+<img src="./images/useCallbackexample1.png">
+
+<img src="./images/useCallbackexampl2.png">
+
+</div>
+
+<div id="optimization_methods">
+
+### Optimization Methods of a website in React
+
+There are several key techniques for performance optimization:
+1. **Code Splitting**:
+    <li>
+    **Dynamic Imports**: Use React.lazy and Suspense to load components only when they are needed,
+    reducing the initial load time.
+
+    <img src="./images/code_optimization1.png">
+
+    </li>
+
+    <li>
+    **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
+
+    </li>
+
+2. **Memoization**:
+
+    <li>
+    **React.memo**: Wrap functional components to prevent unnecessary re-renders when props have not changed.4
+    <img src="./images/code_optimization2.png">
+    </li>
+    <li>
+    **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
+    prevent re-computation on every render.
+
+    <img src="./images/code_optimization3.png">
+    </li>
+
+3. **Minimize Re-renders**    
+    <li>
+    **Key Prop**: Ensure you provide a stable and unique key prop for list items to help React identify which items have changed.
+    </li>
+    <li>
+    **Shallow Comparison**: When using React.memo, React performs a shallow comparison of props. Ensure that objects 
+    and arrays are not recreated on each render unless their contents change.
+    </li>
+
+</div>
+
+
+
+
+
 
 </div>
 
