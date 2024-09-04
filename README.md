@@ -1,34 +1,45 @@
 # React-Js
+
 <li><a href="#reconciliation">Reconciliation</a></li>
+<li><a href="#diffing_algorithm">Diffing algorithm</a></li>
+<li><a href="#use_effect">useEffect Hook</a></li>
+<li><a href="#useState">useState Hook</a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+
+
 
 ### Details about React js
 
 **React** is a popular JavaScript library for building user interfaces, particularly for single-page applications
-where you need a dynamic, responsive, and interactive experience. 
+where you need a dynamic, responsive, and interactive experience.
 Developed and maintained by Facebook, React allows developers to create large web applications
 that can update and render efficiently in response to data changes without reloading the page.
 
 #### Key Features of React:
+
 1. **Component-Based Architecture**: React encourages developers to break down the UI into reusable components.
-    Each component is like a small, self-contained piece of the UI that can be composed to form complex UIs
+   Each component is like a small, self-contained piece of the UI that can be composed to form complex UIs
 
-2. **JSX (JavaScript XML)**: React uses JSX, a syntax extension that allows you to write HTML-like code 
-    directly within JavaScript. JSX makes the code easier to understand and allows for seamless
-    integration of HTML with JavaScript logic.
+2. **JSX (JavaScript XML)**: React uses JSX, a syntax extension that allows you to write HTML-like code
+directly within JavaScript. JSX makes the code easier to understand and allows for seamless
+integration of HTML with JavaScript logic.
 
-    <img src="./images/simple_code.png">
+<img src="./images/simple_code.png">
 
 3. **Virtual DOM**: React uses a Virtual DOM, which is a lightweight representation of the actual DOM.
-4. **Unidirectional Data Flow**: In React, data flows in a single direction, from parent to child components. 
-    This makes it easier to debug the application.
+4. **Unidirectional Data Flow**: In React, data flows in a single direction, from parent to child components.
+   This makes it easier to debug the application.
 5. **React Hooks**: Hooks are functions that let you use state and other React features in functional components.
-    Hooks like useState and useEffect allow you to add state management and side effects to functional 
-    components without writing classes.
+   Hooks like useState and useEffect allow you to add state management and side effects to functional
+   components without writing classes.
 
    <img src="./images/Hooks_example.png" alt="Hooks Example">
 
-
 #### Use Cases for React:
+
 1. Single-page applications (SPAs)
 2. Mobile applications (using React Native)
 3. Complex and dynamic web interfaces
@@ -36,83 +47,75 @@ that can update and render efficiently in response to data changes without reloa
 
 Overall, React has become a standard tool in modern web development due to its flexibility, performance, and ease of use.
 
-
-
-
-
 ### Stateful component and Stateless component:
+
 If the component depends on the state of the component, it is called a **stateful component**.
-**Features:**
-    1. **Manages State:** Uses useState, useReducer, or other hooks that manage state in functional components. 
-        In class components, state is managed using this.state and this.setState.
-    2. **Lifecycle Methods:** In class components, stateful components often use lifecycle methods 
-        (e.g., componentDidMount, componentDidUpdate, componentWillUnmount). In functional components, 
-        you can achieve similar effects with the useEffect hook.
-    3. **Dynamic:** Since the component's state can change, the rendered output can also change over time,
-        making it dynamic.
+**Features:** 1. **Manages State:** Uses useState, useReducer, or other hooks that manage state in functional components.
+In class components, state is managed using this.state and this.setState. 2. **Lifecycle Methods:** In class components, stateful components often use lifecycle methods
+(e.g., componentDidMount, componentDidUpdate, componentWillUnmount). In functional components,
+you can achieve similar effects with the useEffect hook. 3. **Dynamic:** Since the component's state can change, the rendered output can also change over time,
+making it dynamic.
 
 <img src="./images/statefull_component.png">
 
 If the component is independent of the state of the component then it is called a **stateless component**.
-**Features:**
-    1. **No State:** Stateless components don't manage or store state internally.
-    2. **Pure Components:** Often implemented as pure functions, meaning they always produce the same output given 
-        the same input (props).
-    3. **Simpler and Reusable:** Since they don't manage state, they're generally simpler and more reusable.
+**Features:** 1. **No State:** Stateless components don't manage or store state internally. 2. **Pure Components:** Often implemented as pure functions, meaning they always produce the same output given
+the same input (props). 3. **Simpler and Reusable:** Since they don't manage state, they're generally simpler and more reusable.
 
 <img src="./images/stateless_component.png">
 
 **Controlled Component**: those components that are controlled by input elements within the form or user input.
+
 1. At first we initialize a state using useState
 2. Set the value of the form using props
 3. Write an handler function to update the state
 4. Attach the handle function with the input element.
-**Uncontrolled Component:**  thoses component which has its own store for handling event. Like ref.
-1. At first we create a ref using useRef.
-2. Attached that ref to the form.
-3. Ref will have an internal handle which update the value of current on changing the value.
+   **Uncontrolled Component:** thoses component which has its own store for handling event. Like ref.
+5. At first we create a ref using useRef.
+6. Attached that ref to the form.
+7. Ref will have an internal handle which update the value of current on changing the value.
 
-**React fiber** is the new implementation or core algorithm of React v16. Which is used to increase the suitability 
+**React fiber** is the new implementation or core algorithm of React v16. Which is used to increase the suitability
 areas like gesture, animation, ability to pause, abort work, prioritize the work and divide the work into chunks.
 
+**React Fiber** is a complete rewrite of React's core algorithm, introduced in React v16. It was designed to address
+limitations in the previous reconciliation algorithm and to improve various aspects of React's performance and
+capabilities.
 
-**React Fiber** is a complete rewrite of React's core algorithm, introduced in React v16. It was designed to address 
-    limitations in the previous reconciliation algorithm and to improve various aspects of React's performance and 
-    capabilities.
 #### Key Features of React Fiber
-1. **Concurrency**: React Fiber enables React to pause, abort, or re-prioritize work. This allows React to handle 
-    complex user interactions (like gestures and animations) more smoothly by breaking work into smaller units and 
-    prioritizing critical updates.
-2. **Incremental Rendering**: Fiber allows React to divide the work into chunks and spread it out over multiple frames. 
-    This improves the responsiveness of the UI by making rendering more interruptible and ensuring that updates do not 
-    block the main thread for too long.
-3. **Priority-Based Updates**: React Fiber introduces the concept of prioritizing updates based on their importance. 
-    For instance, user interactions (such as clicks or typing) can be given higher priority than background data 
-    fetching, ensuring a smoother and more responsive user experience.
-4. **Error Handling**: Fiber improves error handling by enabling better recovery mechanisms and making it easier to 
-    catch errors within components.
-5. **Flexible Rendering**: Fiber provides the ability to render asynchronously, allowing React to adjust and optimize 
-    rendering based on the current state of the application and user interactions.
 
+1. **Concurrency**: React Fiber enables React to pause, abort, or re-prioritize work. This allows React to handle
+   complex user interactions (like gestures and animations) more smoothly by breaking work into smaller units and
+   prioritizing critical updates.
+2. **Incremental Rendering**: Fiber allows React to divide the work into chunks and spread it out over multiple frames.
+   This improves the responsiveness of the UI by making rendering more interruptible and ensuring that updates do not
+   block the main thread for too long.
+3. **Priority-Based Updates**: React Fiber introduces the concept of prioritizing updates based on their importance.
+   For instance, user interactions (such as clicks or typing) can be given higher priority than background data
+   fetching, ensuring a smoother and more responsive user experience.
+4. **Error Handling**: Fiber improves error handling by enabling better recovery mechanisms and making it easier to
+   catch errors within components.
+5. **Flexible Rendering**: Fiber provides the ability to render asynchronously, allowing React to adjust and optimize
+   rendering based on the current state of the application and user interactions.
 
 # Virtual DOM
-The Virtual DOM (VDOM) is an in-memory representation of the real DOM elements. It acts as an intermediary between 
+
+The Virtual DOM (VDOM) is an in-memory representation of the real DOM elements. It acts as an intermediary between
 the application and the browser's actual DOM, helping to optimize updates and rendering for performance.
 
 **Here's how it works:**
 
-1. **Initial Render**: When a React component is rendered for the first time, a Virtual DOM tree is created that 
-    mirrors the structure of the actual DOM.
+1. **Initial Render**: When a React component is rendered for the first time, a Virtual DOM tree is created that
+   mirrors the structure of the actual DOM.
 
 2. **Changes and Updates**: When changes occur in the component state or props, a new Virtual DOM tree is created.
 
-3. **Reconciliation**: React then compares this new Virtual DOM tree with the previous one using a process called 
-    "reconciliation". This comparison is efficient due to React's use of a diffing algorithm that identifies the
-    minimum number of changes needed.
+3. **Reconciliation**: React then compares this new Virtual DOM tree with the previous one using a process called
+   "reconciliation". This comparison is efficient due to React's use of a diffing algorithm that identifies the
+   minimum number of changes needed.
 
-4. **Patching the Real DOM**: After identifying the changes, React updates the actual DOM only where necessary, 
-    ensuring minimal manipulation and improving performance.
-
+4. **Patching the Real DOM**: After identifying the changes, React updates the actual DOM only where necessary,
+   ensuring minimal manipulation and improving performance.
 
 **Here's a step-by-step summary of the process:**
 
@@ -121,9 +124,8 @@ the application and the browser's actual DOM, helping to optimize updates and re
 3. **Diffing Algorithm**: React compares the new Virtual DOM tree with the previous one to identify differences.
 4. **Batch Updates**: React efficiently updates the real DOM by applying only the necessary changes.
 
-This approach minimizes direct DOM manipulations, making updates more efficient and improving the 
+This approach minimizes direct DOM manipulations, making updates more efficient and improving the
 overall performance of the application.
-
 
 <div id="reconciliation">
 
@@ -131,8 +133,194 @@ overall performance of the application.
 
 **Reconciliation** is the step that happens between the render function being called and the final elements displayed
 on the screen. This entire process is known are reconciliation. It involves comparing the new Virtual DOM with the
-previous one and efficiently updating the real DOM to reflect any changes. This ensures optimal performance 
+previous one and efficiently updating the real DOM to reflect any changes. This ensures optimal performance
 by minimizing direct DOM manipulations.
+
+**How Reconciliation Works**
+
+1. **Rendering Phase**:
+<li>When a component's state or props change, React triggers a re-render of that component.</li>
+<li>The component's render() function (or the functional component itself) returns a new virtual DOM tree.</li>
+2. **Comparing the Virtual DOM**:
+<li>React compares the new virtual DOM tree with the previous one (this process is called "diffing").</li>
+<li>It checks for differences between the two trees, such as changes in elements, attributes, or text content.</li>
+3. **Updating the DOM**:
+<li>After identifying the differences, React updates only the parts of the actual DOM that have changed.</li>
+<li>This efficient updating minimizes reflows and repaints, leading to better performance.</li>
+
+#### Key Concepts in Reconciliation
+
+1. **Virtual DOM**: The virtual DOM is an in-memory representation of the real DOM.
+   React uses it to track changes in the UI without directly interacting with the real DOM until necessary.
+
+2. **Diffing Algorithm**: React uses a highly optimized diffing algorithm to compare the new virtual DOM with
+   the previous one. It assumes that elements with the same type and key will be the same, and it only
+   updates those parts that have changed.
+
+3. **Keys**: Keys are crucial in helping React identify which elements have changed, been added, or been removed.
+   They are especially important when rendering lists of elements. React uses keys to track elements
+   between renders to avoid unnecessary re-renders.
+
+#### Example of Reconciliation
+
+<img src="./images/reconciliation.png">
+
+<li>Initially, React renders the h1 element with the value 0.</li>
+<li>When the button is clicked, setCount updates the state to 1.</li>
+<li>React generates a new virtual DOM where the h1 element has the value 1.</li>
+<li>React compares the new virtual DOM with the old one and determines that only the text content inside the 
+h1 element has changed.</li>
+<li>React then updates the DOM by changing the text content of the h1 element from 0 to 1, 
+without re-rendering the entire div.</li>
+</div>
+
+<div id="diffing_algorithm">
+
+### Diffing algorithm
+
+The primary algorithm used in React for reconciliation is the diffing algorithm. 
+
+Here's an overview of the diffing algorithm and its complexity:
+
+**React's Diffing Algorithm**
+React employs a heuristic O(n) algorithm to compare the new and old Virtual DOM trees. 
+
+#### The key aspects of this algorithm include:
+**Element Type Comparison:** If the elements have different types, React assumes the entire subtree is different and 
+replaces the old tree with the new one. This operation is relatively straightforward and efficient.
+
+**Keys for List Elements:** For lists of elements, React uses keys to track which items have changed, been added, 
+or been removed. Keys help React identify items efficiently, reducing the complexity of updating lists from O(n^3) 
+(which would be required for a naive deep comparison of two trees) to O(n).
+
+**Child Elements:** If the elements have the same type, React recursively steps into the children and compares them.
+
+#### Complexity
+Worst-case complexity: O(n), where n is the number of elements in the Virtual DOM tree
+
+
+</div>
+
+
+<div id="use_effect">
+
+### useEffect Hook
+
+The useEffect hook in React serves a similar purpose to several lifecycle methods in class components. 
+It allows you to perform side effects in function components, and its behavior can be mapped to different 
+phases of the component lifecycle. Here's how useEffect fits into the lifecycle methods:
+
+### Equivalent Class Component Lifecycle Methods
+1. **Component Did Mount (componentDidMount)**
+2. **Component Did Update (componentDidUpdate)**
+3. **Component Will Unmount (componentWillUnmount)**
+
+
+#### useEffect Usage and Lifecycle Mapping
+1. **Initial Render (componentDidMount)**: To perform an action only once after the initial render 
+    (similar to componentDidMount), you can pass an empty dependency array [] to useEffect:
+
+    <img src="./images/useEffect_1.png">
+
+2. **Subsequent Renders (componentDidUpdate)**: To run side effects after every render 
+    (or when specific dependencies change), include those dependencies in the dependency array:
+
+    <img src="./images/useEffect2.png">
+
+    If you want to perform an action after every render (regardless of dependencies), omit the dependency array:
+
+    <img src="./images/useEffect3.png">
+
+3. **Cleanup (componentWillUnmount)**: To clean up after a component is removed from the DOM 
+    (similar to componentWillUnmount), return a cleanup function from useEffect:
+
+    <img src="./images/useEffect4.png">
+
+
+<div>
+
+<div id="useState">
+
+### useState Hook
+
+The useState hook is one of the most fundamental hooks in React. It allows you to add state to functional components.
+
+**How useState Works**
+When you call useState, it returns an array with two elements:
+
+1. The current state value: This is the current value of the state.
+2. A function to update the state: This function is used to update the state value and trigger a re-render of 
+    the component.
+
+**Syntax**:
+<img src="./images/useStateSyntax.png">
+
+<li> 
+
+**state**: The current state value.</li>
+<li>
+
+**setState**: The function you use to update the state.</li>
+<li>
+
+**initialState**: The initial value of the state, which can be a primitive value, object, array, 
+or any other data type. </li>
+
+##### Example Usage
+**Basic Counter Example**
+
+<img src="./images/useStateExample1.png">
+
+<li>
+
+**Initial State**: useState(0) initializes the count state variable to 0. </li>
+<li>
+
+**Updating State**: setCount(count + 1) updates the count state variable when the button is clicked, 
+incrementing it by 1.</li>
+
+### Important Points
+**State is Preserved Across Renders**: The value returned by useState is preserved between renders. 
+Each time the state is updated, the component re-renders with the new state value.
+**Updating State Triggers a Re-render**: When you call the state updater function returned by useState, 
+React schedules a re-render of the component.
+**Multiple useState Calls**: You can call useState multiple times in a single component 
+if you need to manage more than one piece of state.
+
+
+### Lazy Initialization
+If the initial state is expensive to calculate, you can pass a function to useState, which will only run during 
+the initial render.
+
+<img src="./images/usestateLazy.png">
+
+</div>
+
+<div id="use_reducer">
+
+### UseReducer 
+The useReducer hook in React is an alternative to useState for managing state in functional components. 
+It is especially useful for managing complex state logic that involves multiple sub-values or when the next state 
+depends on the previous state. useReducer is inspired by the reducer pattern commonly used in Redux.
+
+**Purpose of useReducer**
+1. **Complex State Logic**: useReducer is well-suited for cases where state transitions involve complex logic 
+    or multiple state variables that need to be updated in a coordinated way.
+2. **Predictable State Management**: It helps in maintaining a predictable state management pattern using actions 
+    and reducers, similar to how you would manage state in Redux.
+
+#### Syntax and Usage
+The useReducer hook takes two arguments:
+    1. **Reducer Function**: A function that receives the current state and an action, and returns a new state. 
+    This function describes how the state changes in response to actions.
+    2. **Initial State**: The initial state value or object.
+
+   **const [state, dispatch] = useReducer(reducer, initialState);**
+
+   **reducer**: A function that takes two arguments—state and action—and returns the new state based on the action type.
+   **initialState**: The initial state value or object for the state.
+
+   <img src="./images/usereducer.png">
 
 </div>
 
