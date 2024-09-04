@@ -89,20 +89,25 @@ the same input (props).
 
 <div id="controlled_component">
 
+### Controlled and UnControlled Component 
+
 **Controlled Component**: those components that are controlled by input elements within the form or user input.
 
 1. At first we initialize a state using useState
 2. Set the value of the form using props
 3. Write an handler function to update the state
 4. Attach the handle function with the input element.
-   **Uncontrolled Component:** thoses component which has its own store for handling event. Like ref.
-5. At first we create a ref using useRef.
-6. Attached that ref to the form.
-7. Ref will have an internal handle which update the value of current on changing the value.
+
+**Uncontrolled Component:** thoses component which has its own store for handling event. Like ref.
+1. At first we create a ref using useRef.
+2. Attached that ref to the form.
+3. Ref will have an internal handle which update the value of current on changing the value.
 
 </div>
 
 <div id="react_fiber">
+
+### React Fiber
 
 **React fiber** is the new implementation or core algorithm of React v16. Which is used to increase the suitability
 areas like gesture, animation, ability to pause, abort work, prioritize the work and divide the work into chunks.
@@ -130,7 +135,7 @@ capabilities.
 
 <div id="vdom">
 
-# Virtual DOM
+### Virtual DOM
 
 The Virtual DOM (VDOM) is an in-memory representation of the real DOM elements. It acts as an intermediary between
 the application and the browser's actual DOM, helping to optimize updates and rendering for performance.
@@ -162,7 +167,7 @@ overall performance of the application.
 
 <div id="reconciliation">
 
-# Reconciliation
+### Reconciliation
 
 **Reconciliation** is the step that happens between the render function being called and the final elements displayed
     on the screen. This entire process is known are reconciliation. It involves comparing the new Virtual DOM with the
