@@ -23,7 +23,8 @@
 
 
 <div id="details_react">
-### Details about React js
+
+# Details about React js
 
 **React** is a popular JavaScript library for building user interfaces, particularly for single-page applications
 where you need a dynamic, responsive, and interactive experience.
@@ -62,7 +63,7 @@ Overall, React has become a standard tool in modern web development due to its f
 
 <div id="state_full_and_state_less">
 
-### Stateful component and Stateless component:
+# Stateful component and Stateless component:
 
 If the component depends on the state of the component, it is called a **stateful component**.
 **Features:** 
@@ -89,7 +90,7 @@ the same input (props).
 
 <div id="controlled_component">
 
-### Controlled and UnControlled Component 
+# Controlled and UnControlled Component 
 
 **Controlled Component**: those components that are controlled by input elements within the form or user input.
 
@@ -107,7 +108,7 @@ the same input (props).
 
 <div id="react_fiber">
 
-### React Fiber
+# React Fiber
 
 **React fiber** is the new implementation or core algorithm of React v16. Which is used to increase the suitability
 areas like gesture, animation, ability to pause, abort work, prioritize the work and divide the work into chunks.
@@ -135,7 +136,7 @@ capabilities.
 
 <div id="vdom">
 
-### Virtual DOM
+# Virtual DOM
 
 The Virtual DOM (VDOM) is an in-memory representation of the real DOM elements. It acts as an intermediary between
 the application and the browser's actual DOM, helping to optimize updates and rendering for performance.
@@ -167,7 +168,7 @@ overall performance of the application.
 
 <div id="reconciliation">
 
-### Reconciliation
+# Reconciliation
 
 **Reconciliation** is the step that happens between the render function being called and the final elements displayed
     on the screen. This entire process is known are reconciliation. It involves comparing the new Virtual DOM with the
@@ -216,7 +217,7 @@ without re-rendering the entire div.</li>
 
 <div id="diffing_algorithm">
 
-### Diffing algorithm
+# Diffing algorithm
 
 The primary algorithm used in React for reconciliation is the diffing algorithm. 
 
@@ -244,7 +245,7 @@ Worst-case complexity: O(n), where n is the number of elements in the Virtual DO
 
 <div id="use_effect">
 
-### useEffect Hook
+# useEffect Hook
 
 The useEffect hook in React serves a similar purpose to several lifecycle methods in class components. 
 It allows you to perform side effects in function components, and its behavior can be mapped to different 
@@ -281,7 +282,7 @@ phases of the component lifecycle. Here's how useEffect fits into the lifecycle 
 
 <div id="useState">
 
-### useState Hook
+# useState Hook
 
 The useState hook is one of the most fundamental hooks in React. It allows you to add state to functional components.
 
@@ -338,7 +339,7 @@ the initial render.
 
 <div id="use_reducer">
 
-### UseReducer 
+# UseReducer 
 The useReducer hook in React is an alternative to useState for managing state in functional components. 
 It is especially useful for managing complex state logic that involves multiple sub-values or when the next state 
 depends on the previous state. useReducer is inspired by the reducer pattern commonly used in Redux.
@@ -366,7 +367,7 @@ The useReducer hook takes two arguments:
 
 <div id="use_ref">
 
-## useRef Hook: 
+# useRef Hook: 
     The useRef hook in React is used to create and manage mutable references to DOM elements or values across renders
     without causing re-renders. It provides a way to persist values across renders without causing side 
     effects or triggering re-renders, which is particularly useful for accessing and interacting 
@@ -403,7 +404,7 @@ The useRef hook returns a mutable object with a current property that can hold a
 
 <div id="use_context">
 
-### useContext Hook
+# useContext Hook
 
 The useContext hook in React is used to access the value of a context that was provided higher up in the component tree.
 Context provides a way to pass data through the component tree without having to pass props down manually at 
@@ -433,7 +434,7 @@ every level, which is particularly useful for global or shared state like themes
 
 <div id="use_memo">
 
-### useMemo Hook
+# useMemo Hook
 
 The useMemo hook in React is used to optimize performance by memoizing the results of expensive computations 
 so that they are only recalculated when their dependencies change. This can help avoid unnecessary recalculations 
@@ -467,7 +468,7 @@ and improve rendering performance, especially in components that perform heavy c
 
 <div id="use_callback">
 
-### useCallback Hook
+# useCallback Hook
 
 The useCallback hook in React is used to memoize callback functions, ensuring that the same instance of the function 
 is used between renders unless its dependencies change. This can be beneficial for optimizing performance, 
@@ -500,44 +501,44 @@ particularly when passing callbacks to child components or hooks that depend on 
 
 <div id="optimization_methods">
 
-### Optimization Methods of a website in React
+# Optimization Methods of a website in React
 
 There are several key techniques for performance optimization:
 1. **Code Splitting**:
-    <li>
+    <ol>
     **Dynamic Imports**: Use React.lazy and Suspense to load components only when they are needed,
     reducing the initial load time.
 
     <img src="./images/code_optimization1.png">
 
-    </li>
+    </ol>
 
-    <li>
+    <ol>
     **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
 
-    </li>
+    </ol>
 
 2. **Memoization**:
 
-    <li>
+    <ol>
     **React.memo**: Wrap functional components to prevent unnecessary re-renders when props have not changed.4
     <img src="./images/code_optimization2.png">
-    </li>
-    <li>
+    </ol>
+    <ol>
     **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
     prevent re-computation on every render.
 
     <img src="./images/code_optimization3.png">
-    </li>
+    </ol>
 
 3. **Minimize Re-renders**    
-    <li>
+    <ol>
     **Key Prop**: Ensure you provide a stable and unique key prop for list items to help React identify which items have changed.
-    </li>
-    <li>
+    </ol>
+    <ol>
     **Shallow Comparison**: When using React.memo, React performs a shallow comparison of props. Ensure that objects 
     and arrays are not recreated on each render unless their contents change.
-    </li>
+    </ol>
 
 </div>
 
@@ -546,5 +547,4 @@ There are several key techniques for performance optimization:
 
 
 
-</div>
 
