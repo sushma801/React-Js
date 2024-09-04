@@ -15,7 +15,7 @@ that can update and render efficiently in response to data changes without reloa
     directly within JavaScript. JSX makes the code easier to understand and allows for seamless
     integration of HTML with JavaScript logic.
 
-    Example: const element = <h1>Hello, world!</h1>;
+    # Example: const element = <h1>Hello, world!</h1>;
 
 3. **Virtual DOM**: React uses a Virtual DOM, which is a lightweight representation of the actual DOM.
 4. **Unidirectional Data Flow**: In React, data flows in a single direction, from parent to child components. 
@@ -49,6 +49,8 @@ that can update and render efficiently in response to data changes without reloa
 4. Building reusable UI components
 
 Overall, React has become a standard tool in modern web development due to its flexibility, performance, and ease of use.
+
+
 
 
 
