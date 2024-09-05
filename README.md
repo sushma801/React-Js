@@ -433,6 +433,7 @@ every level, which is particularly useful for global or shared state like themes
 <br>
 
 **main.js**
+<br>
 <img src="./images/useContext2.png">
 
 
@@ -472,6 +473,7 @@ and improve rendering performance, especially in components that perform heavy c
 <br>
 
 **main.js** <br>
+
 <img src="./images/useMemoExample2.png">
 
 
@@ -526,6 +528,8 @@ There are several key techniques for performance optimization:
     <img src="./images/code_optimization1.png">
 
     <br>
+
+
     **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
 
    
@@ -539,7 +543,7 @@ There are several key techniques for performance optimization:
    
     <br>
 
-    
+
     **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
     prevent re-computation on every render.
 
