@@ -326,7 +326,7 @@ if you need to manage more than one piece of state.
 
 ### Lazy Initialization
 If the initial state is expensive to calculate, you can pass a function to useState, which will only run during 
-the initial render.
+the initial render.<br>
 
 <img src="./images/usestateLazy.png">
 
@@ -363,10 +363,12 @@ The useReducer hook takes two arguments:
 <div id="use_ref">
 
 # useRef Hook: 
-    The useRef hook in React is used to create and manage mutable references to DOM elements or values across renders
-    without causing re-renders. It provides a way to persist values across renders without causing side 
-    effects or triggering re-renders, which is particularly useful for accessing and interacting 
-    with DOM elements directly or storing values that don't affect rendering.
+    The useRef hook in React is used to create and manage mutable references to DOM
+    elements or values across renders without causing re-renders. It provides a way 
+    to persist values across renders without causing side effects or triggering re-renders,
+    which is particularly useful for accessing and interacting with DOM elements directly 
+    or storing values that don't affect rendering.
+
 **Purpose of useRef**
 1. **Accessing DOM Elements**: Allows direct access to a DOM element for purposes like focusing an input, 
     measuring size, or performing animations.
@@ -383,6 +385,7 @@ The useRef hook returns a mutable object with a current property that can hold a
 **refContainer.current**: This is where the useRef value is stored.
 
 **Example**
+<br>
 <img src="./images/userefExample.png">
 
 1. **ref={inputRef}**: Attaches the inputRef to the input element.
@@ -411,7 +414,7 @@ every level, which is particularly useful for global or shared state like themes
 2. **Avoid Prop Drilling**: Simplifies passing data through many layers of components, avoiding the need 
     to pass props down manually through intermediate components.
 
-#### Syntax and Usage
+#### Syntax and Usage <br>
 <img src="./images/useContextSyntax.png">
 
 1. **MyContext**: This is the context object that you create using React.createContext().
@@ -419,8 +422,10 @@ every level, which is particularly useful for global or shared state like themes
 
 #### Example of useContext
 **useAuthContext.js**
+<br>
 <img src="./images/useContext1.png">
 
+<br>
 **main.js**
 <img src="./images/useContext2.png">
 
@@ -445,15 +450,20 @@ and improve rendering performance, especially in components that perform heavy c
 1. A function that returns the value you want to memoize.
 2. A dependency array that determines when the memoized value should be recalculated.
 
+<br>
 <img src="./images/useMemoSytax.png">
+<br>
 
 **First Argument**: A function that performs the expensive computation or creates a complex object.
 **Second Argument**: An array of dependencies that the memoized value depends on. The memoized value is recalculated only if one of these dependencies changes.
 
 ### Example
+<br>
 
 **practice.js**
 <img src="./images/useMemoExample1.png">
+
+<br>
 
 **main.js**
 <img src="./images/useMemoExample2.png">
@@ -482,14 +492,17 @@ particularly when passing callbacks to child components or hooks that depend on 
 1. A callback function that you want to memoize.
 2. A dependency array that specifies when the callback function should be recreated.
 
+<br>
 <img src="./images/useCallbackSyntax.png">
+<br>
 
 **First Argument**: The callback function that you want to memoize.
 **Second Argument**: An array of dependencies that, when changed, will cause the callback function to be recreated.
 
 #### Example
+<br>
 <img src="./images/useCallbackexample1.png">
-
+<br>
 <img src="./images/useCallbackexampl2.png">
 
 </div>
@@ -503,12 +516,8 @@ There are several key techniques for performance optimization:
     
     **Dynamic Imports**: Use React.lazy and Suspense to load components only when they are needed,
     reducing the initial load time.
-
+    <br>
     <img src="./images/code_optimization1.png">
-
-   
-
-    
     **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
 
    
@@ -516,14 +525,17 @@ There are several key techniques for performance optimization:
 2. ### Memoization:
 
     
-    **React.memo**: Wrap functional components to prevent unnecessary re-renders when props have not changed.4
+    **React.memo**: Wrap functional components to prevent unnecessary re-renders when props have not changed.
+    <br>
     <img src="./images/code_optimization2.png">
    
-    
+    <br>
     **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
     prevent re-computation on every render.
 
+    <br>
     <img src="./images/code_optimization3.png">
+    <br>
    
 
 3. ### Minimize Re-renders    
@@ -553,11 +565,13 @@ Pure components help optimize performance by avoiding unnecessary re-renders.
 2. **React.PureComponent**: React.PureComponent is a base class provided by React that you can extend to create 
     pure components. It automatically implements shouldComponentUpdate with a shallow comparison.
 
+    <br>
     <img src="./images/pure_component.png" >
 
 3. **Functional Components with React.memo**: For functional components, you can achieve similar behavior 
     using React.memo, which wraps the component and performs a shallow comparison of props.
 
+    <br>
     <img src="./images/pure_component_1.png">
 
 
@@ -567,12 +581,13 @@ Pure components help optimize performance by avoiding unnecessary re-renders.
 
 # Higher Order Component
 
-A **Higher-Order Component (HOC)**is a pattern in React that allows you to reuse component logic across different 
+A **Higher-Order Component (HOC)** is a pattern in React that allows you to reuse component logic across different 
 components. An HOC is a function that takes a component and returns a new component with additional props or behavior.
 
 **Function Signature**: An HOC is a function that takes a component as an argument and returns a new 
 component with enhanced functionality.
 
+<br>
 <img src="./images/HOC.png">
 
 #### Usage: 
@@ -584,6 +599,7 @@ component with enhanced functionality.
 <div id="throttling_and_debouncing">
 
 # Throttling and debouncing: 
+
 **Throttling** limits the rate at which a function can fire. It ensures that the function is not invoked more than 
     once within a specified time interval, even if the event triggering the function continues to occur.
 
