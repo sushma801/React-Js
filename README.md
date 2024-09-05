@@ -17,12 +17,8 @@
 <li><a href="#pure_component">Pure Component</a></li>
 <li><a href="#higher_o_component">Higher Order Component</a></li>
 <li><a href="#throttling_and_debouncing">Throttling and debouncing</a></li>
+<li><a href="#class_functional_component">Difference between Class Based and Functional based Component</a></li>
 <li><a href=""></a></li>
-<li><a href=""></a></li>
-
-
-
-
 
 
 <div id="details_react">
@@ -634,5 +630,93 @@ component with enhanced functionality.
     Achieved by setting a timer each time the function is called. If the function is called again 
     before the timer expires, the timer is reset. The function is only executed after the timer has 
     completed without further invocations.
+
+</div>
+
+<div id="class_functional_component">
+
+# Difference between Class Based and Functional based Component
+
+1. ## Syntax: 
+
+    <li>
+    **Functional Components**: These are simple JavaScript functions that return JSX. They do not have
+    their own state or lifecycle methods without using hooks.
+    <br>
+    <img src="./images/fn_com_1.png">
+    
+    </li>
+    <li>
+    **Class-Based Component**: These are ES6 classes that extend React.Component. 
+    They come with built-in support for state and lifecycle methods.
+    <br>
+    <img src="./images/cls_com_1.png">
+    <br>
+    </li>
+
+2. ## State Management:
+
+    <li>
+    **Functional Component**: Originally, functional components were stateless, but with the introduction of 
+    React Hooks (like useState and useEffect), they can now manage state and side effects.
+    <br>
+    <img src="./images/fn_com_2.png">     
+    </li>
+    <li>
+    **Class-Based Component**: Class components have built-in state management using this.state and this.setState().
+    <br>
+    <img src="./images/cls_com_2.png">
+    </li>
+
+3. ## Lifecycle Methods:
+
+    <li>
+    **Functional Component**:  Do not have lifecycle methods, but you can replicate the behavior using
+    hooks like useEffect, which combines componentDidMount, componentDidUpdate, and componentWillUnmount.
+    <br>
+    <img src="./images/fn_com_3.png">
+    </li>
+    <li>
+    **Class-Based Component**: Have dedicated lifecycle methods such as componentDidMount, 
+    componentDidUpdate, componentWillUnmount, etc.
+    <br>
+    <img src="./images/cls_com_3.png">
+    </li>
+
+4. # Hooks Support
+     <li>
+    **Functional Component**: You can use React Hooks (like useState, useEffect, useContext, etc.) only in 
+    functional components.
+    </li>
+    <li>
+    **Class-Based Component**: Do not support hooks. They rely on state and lifecycle methods for 
+    similar functionality.
+    </li>
+
+
+5. # Performance
+     <li>
+    **Functional Component**: With hooks, functional components tend to be slightly more performant 
+    due to fewer complexities compared to class components, especially after React introduced 
+    improvements like React.memo and useCallback to optimize re-renders.
+    
+    </li>
+    <li>
+    **Class-Based Component**: Are generally more complex due to the use of this keyword and lifecycle methods, 
+    which can lead to more overhead in certain cases.
+    
+    </li>
+
+
+6. # Readability and Conciseness
+      <li>
+    **Functional Component**: Tend to be more concise and easier to read, especially for simple UI components or logic.
+    
+    </li>
+    <li>
+    **Class-Based Component**: Can become verbose due to the need for constructor functions, 
+    this bindings, and lifecycle methods
+    
+    </li>
 
 </div>
