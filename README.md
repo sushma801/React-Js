@@ -153,7 +153,7 @@ the application and the browser's actual DOM, helping to optimize updates and re
 
 3. **Reconciliation**: React then compares this new Virtual DOM tree with the previous one using a process called
    "reconciliation". This comparison is efficient due to React's use of a diffing algorithm that identifies the
-   minimum number of changes needed.
+    minimum number of changes needed.
 
 4. **Patching the Real DOM**: After identifying the changes, React updates the actual DOM only where necessary,
    ensuring minimal manipulation and improving performance.
@@ -181,16 +181,16 @@ overall performance of the application.
 **How Reconciliation Works**
 
 1. **Rendering Phase**:
-<li>When a component's state or props change, React triggers a re-render of that component.</li>
-<li>The component's render() function (or the functional component itself) returns a new virtual DOM tree.</li>
+    <li>When a component's state or props change, React triggers a re-render of that component.</li>
+    <li>The component's render() function (or the functional component itself) returns a new virtual DOM tree.</li>
 
 2. **Comparing the Virtual DOM**:
-<li>React compares the new virtual DOM tree with the previous one (this process is called "diffing").</li>
-<li>It checks for differences between the two trees, such as changes in elements, attributes, or text content.</li>
+    <li>React compares the new virtual DOM tree with the previous one (this process is called "diffing").</li>
+    <li>It checks for differences between the two trees, such as changes in elements, attributes, or text content.</li>
 
 3. **Updating the DOM**:
-<li>After identifying the differences, React updates only the parts of the actual DOM that have changed.</li>
-<li>This efficient updating minimizes reflows and repaints, leading to better performance.</li>
+    <li>After identifying the differences, React updates only the parts of the actual DOM that have changed.</li>
+    <li>This efficient updating minimizes reflows and repaints, leading to better performance.</li>
 
 #### Key Concepts in Reconciliation
 
@@ -207,15 +207,16 @@ overall performance of the application.
 
 #### Example of Reconciliation
 
+<br>
 <img src="./images/reconciliation.png">
 
-<li>Initially, React renders the h1 element with the value 0.</li>
-<li>When the button is clicked, setCount updates the state to 1.</li>
-<li>React generates a new virtual DOM where the h1 element has the value 1.</li>
-<li>React compares the new virtual DOM with the old one and determines that only the text content inside the 
-h1 element has changed.</li>
-<li>React then updates the DOM by changing the text content of the h1 element from 0 to 1, 
-without re-rendering the entire div.</li>
+<li>    Initially, React renders the h1 element with the value 0.</li>
+<li>    When the button is clicked, setCount updates the state to 1.</li>
+<li>    React generates a new virtual DOM where the h1 element has the value 1.</li>
+<li>    React compares the new virtual DOM with the old one and determines that only the text content inside the 
+    h1 element has changed.</li>
+<li>    React then updates the DOM by changing the text content of the h1 element from 0 to 1, 
+    without re-rendering the entire div.</li>
 </div>
 
 <div id="diffing_algorithm">
@@ -370,12 +371,14 @@ The useReducer hook takes two arguments:
     or storing values that don't affect rendering.
 
 **Purpose of useRef**
+
 1. **Accessing DOM Elements**: Allows direct access to a DOM element for purposes like focusing an input, 
     measuring size, or performing animations.
 2. **Persisting Values**: Useful for persisting values that should not trigger a re-render when they change, 
     such as storing previous state values or timers.
 3. **Avoiding Re-renders**: Stores mutable values without causing component re-renders, unlike state which triggers 
     re-renders on updates.
+
 **Syntax and Usage**
 The useRef hook returns a mutable object with a current property that can hold any value or reference to a DOM element:
 
@@ -386,12 +389,14 @@ The useRef hook returns a mutable object with a current property that can hold a
 
 **Example**
 <br>
+
 <img src="./images/userefExample.png">
 
 1. **ref={inputRef}**: Attaches the inputRef to the input element.
 2. **inputRef.current.focus()**: Calls the focus method on the input element when the button is clicked.
 
 ### Important Points
+
 1. **No Re-render on Update**: Unlike state, updating a useRef value does not trigger a re-render of the component.
 2. **Direct DOM Manipulation**: useRef is commonly used for interacting with DOM elements directly, 
     like focusing an input, triggering animations, or accessing a component’s dimensions.
@@ -426,6 +431,7 @@ every level, which is particularly useful for global or shared state like themes
 <img src="./images/useContext1.png">
 
 <br>
+
 **main.js**
 <img src="./images/useContext2.png">
 
@@ -460,12 +466,12 @@ and improve rendering performance, especially in components that perform heavy c
 ### Example
 <br>
 
-**practice.js**
+**practice.js** <br>
 <img src="./images/useMemoExample1.png">
 
 <br>
 
-**main.js**
+**main.js** <br>
 <img src="./images/useMemoExample2.png">
 
 
@@ -518,6 +524,8 @@ There are several key techniques for performance optimization:
     reducing the initial load time.
     <br>
     <img src="./images/code_optimization1.png">
+
+    <br>
     **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
 
    
@@ -530,6 +538,8 @@ There are several key techniques for performance optimization:
     <img src="./images/code_optimization2.png">
    
     <br>
+
+    
     **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
     prevent re-computation on every render.
 
