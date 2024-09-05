@@ -637,7 +637,7 @@ component with enhanced functionality.
 
 # Difference between Class Based and Functional based Component
 
-1. ## Syntax: 
+1. ##   Syntax: 
 
     <ol>
     
@@ -656,7 +656,7 @@ component with enhanced functionality.
     <br>
     </ol>
 
-2. ## State Management:
+2. ##   State Management:
 
     <ol>
     
@@ -672,7 +672,7 @@ component with enhanced functionality.
     <img src="./images/cls_com_2.png">
     </ol>
 
-3. ## Lifecycle Methods:
+3. ##   Lifecycle Methods:
 
     <ol>
     
@@ -689,7 +689,7 @@ component with enhanced functionality.
     <img src="./images/cls_com_3.png">
     </ol>
 
-4. # Hooks Support
+4. #    Hooks Support
      <ol>
     
     **Functional Component**: You can use React Hooks (like useState, useEffect, useContext, etc.) only in 
@@ -702,7 +702,7 @@ component with enhanced functionality.
     </ol>
 
 
-5. # Performance
+5. #    Performance
      <ol>
    
     **Functional Component**: With hooks, functional components tend to be slightly more performant 
@@ -718,7 +718,7 @@ component with enhanced functionality.
     </ol>
 
 
-6. # Readability and Conciseness
+6. #    Readability and Conciseness
       <ol>
    
     **Functional Component**: Tend to be more concise and easier to read, especially for simple UI components or logic.
