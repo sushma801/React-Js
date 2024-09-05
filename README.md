@@ -14,11 +14,14 @@
 <li><a href="#use_memo">useMemo Hook</a></li>
 <li><a href="#use_callback">useCallback Hook</a></li>
 <li><a href="#optimization_methods">Optimization Methods of a website in React</a></li>
+<li><a href="#pure_component">Pure Component</a></li>
+<li><a href="#higher_o_component">Higher Order Component</a></li>
+<li><a href="#throttling_and_debouncing">Throttling and debouncing</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
+
+
+
 
 
 
@@ -496,47 +499,110 @@ particularly when passing callbacks to child components or hooks that depend on 
 # Optimization Methods of a website in React
 
 There are several key techniques for performance optimization:
-1. **Code Splitting**:
-    <ol>
+1. ### Code Splitting:
+    
     **Dynamic Imports**: Use React.lazy and Suspense to load components only when they are needed,
     reducing the initial load time.
 
     <img src="./images/code_optimization1.png">
 
-    </ol>
+   
 
-    <ol>
+    
     **React.lazy and Suspense**: These enable loading components lazily and handling the loading state.
 
-    </ol>
+   
 
-2. **Memoization**:
+2. ### Memoization:
 
-    <ol>
+    
     **React.memo**: Wrap functional components to prevent unnecessary re-renders when props have not changed.4
     <img src="./images/code_optimization2.png">
-    </ol>
-    <ol>
+   
+    
     **useMemo and useCallback Hooks**: Use these hooks to memoize expensive calculations and functions to 
     prevent re-computation on every render.
 
     <img src="./images/code_optimization3.png">
-    </ol>
+   
 
-3. **Minimize Re-renders**    
-    <ol>
+3. ### Minimize Re-renders    
+    
     **Key Prop**: Ensure you provide a stable and unique key prop for list items to help React identify which items have changed.
-    </ol>
-    <ol>
+   
+    
     **Shallow Comparison**: When using React.memo, React performs a shallow comparison of props. Ensure that objects 
     and arrays are not recreated on each render unless their contents change.
-    </ol>
+   
 
 </div>
 
 
+<div id="pure_component">
+
+# Pure Component
+
+In React, a **Pure Component** is a component that only re-renders when its props or state change. 
+It performs a **shallow comparison** of props and state to determine if a re-render is necessary. 
+Pure components help optimize performance by avoiding unnecessary re-renders.
+
+### Key Features of Pure Components
+1. **Shallow Comparison**: A pure component performs a shallow comparison of the current and next props and state. 
+    If the values are the same (i.e., if they haven't changed), the component does not re-render.
+
+2. **React.PureComponent**: React.PureComponent is a base class provided by React that you can extend to create 
+    pure components. It automatically implements shouldComponentUpdate with a shallow comparison.
+
+    <img src="./images/pure_component.png" >
+
+3. **Functional Components with React.memo**: For functional components, you can achieve similar behavior 
+    using React.memo, which wraps the component and performs a shallow comparison of props.
+
+    <img src="./images/pure_component_1.png">
 
 
+</div>
+
+<div id="higher_o_component">
+
+# Higher Order Component
+
+A **Higher-Order Component (HOC)**is a pattern in React that allows you to reuse component logic across different 
+components. An HOC is a function that takes a component and returns a new component with additional props or behavior.
+
+**Function Signature**: An HOC is a function that takes a component as an argument and returns a new 
+component with enhanced functionality.
+
+<img src="./images/HOC.png">
+
+#### Usage: 
+    You use an HOC by wrapping a component with the HOC function to enhance it with additional props or behavior.
 
 
+</div>
 
+<div id="throttling_and_debouncing">
+
+# Throttling and debouncing: 
+**Throttling** limits the rate at which a function can fire. It ensures that the function is not invoked more than 
+    once within a specified time interval, even if the event triggering the function continues to occur.
+
+### Use Case: 
+    Throttling is useful when you want to limit the frequency of executions of a function, such as 
+    handling scroll events, resizing events, or keystrokes in search inputs.
+### Implementation: 
+    Typically implemented by setting up a timer that delays the execution of a function until 
+    after the specified interval has passed since the last invocation
+
+**Debouncing** delays the execution of a function until after a certain amount of time has passed since 
+    the last invocation of the function. It's typically used to ensure that a function doesn't fire repeatedly, 
+    especially when triggered rapidly.
+### Use Case: 
+    Debouncing is useful for scenarios like search inputs where you want to wait until the user 
+    has stopped typing before triggering a search operation.
+### Implementation: 
+    Achieved by setting a timer each time the function is called. If the function is called again 
+    before the timer expires, the timer is reset. The function is only executed after the timer has 
+    completed without further invocations.
+
+</div>
