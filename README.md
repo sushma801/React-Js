@@ -639,84 +639,96 @@ component with enhanced functionality.
 
 1. ## Syntax: 
 
-    <li>
+    <ol>
+    
     **Functional Components**: These are simple JavaScript functions that return JSX. They do not have
     their own state or lifecycle methods without using hooks.
     <br>
     <img src="./images/fn_com_1.png">
     
-    </li>
-    <li>
+    </ol>
+    <ol>
+    
     **Class-Based Component**: These are ES6 classes that extend React.Component. 
     They come with built-in support for state and lifecycle methods.
     <br>
     <img src="./images/cls_com_1.png">
     <br>
-    </li>
+    </ol>
 
 2. ## State Management:
 
-    <li>
+    <ol>
+    
     **Functional Component**: Originally, functional components were stateless, but with the introduction of 
     React Hooks (like useState and useEffect), they can now manage state and side effects.
     <br>
     <img src="./images/fn_com_2.png">     
-    </li>
-    <li>
+    </ol>
+    <ol>
+    
     **Class-Based Component**: Class components have built-in state management using this.state and this.setState().
     <br>
     <img src="./images/cls_com_2.png">
-    </li>
+    </ol>
 
 3. ## Lifecycle Methods:
 
-    <li>
+    <ol>
+    
     **Functional Component**:  Do not have lifecycle methods, but you can replicate the behavior using
     hooks like useEffect, which combines componentDidMount, componentDidUpdate, and componentWillUnmount.
     <br>
     <img src="./images/fn_com_3.png">
-    </li>
-    <li>
+    </ol>
+    <ol>
+    
     **Class-Based Component**: Have dedicated lifecycle methods such as componentDidMount, 
     componentDidUpdate, componentWillUnmount, etc.
     <br>
     <img src="./images/cls_com_3.png">
-    </li>
+    </ol>
 
 4. # Hooks Support
-     <li>
+     <ol>
+    
     **Functional Component**: You can use React Hooks (like useState, useEffect, useContext, etc.) only in 
     functional components.
-    </li>
-    <li>
+    </ol>
+    <ol>
+   
     **Class-Based Component**: Do not support hooks. They rely on state and lifecycle methods for 
     similar functionality.
-    </li>
+    </ol>
 
 
 5. # Performance
-     <li>
+     <ol>
+   
     **Functional Component**: With hooks, functional components tend to be slightly more performant 
     due to fewer complexities compared to class components, especially after React introduced 
     improvements like React.memo and useCallback to optimize re-renders.
     
-    </li>
-    <li>
+    </ol>
+    <ol>
+    
     **Class-Based Component**: Are generally more complex due to the use of this keyword and lifecycle methods, 
     which can lead to more overhead in certain cases.
     
-    </li>
+    </ol>
 
 
 6. # Readability and Conciseness
-      <li>
+      <ol>
+   
     **Functional Component**: Tend to be more concise and easier to read, especially for simple UI components or logic.
     
-    </li>
-    <li>
+    </ol>
+    <ol>
+    
     **Class-Based Component**: Can become verbose due to the need for constructor functions, 
     this bindings, and lifecycle methods
     
-    </li>
+    </ol>
 
 </div>
