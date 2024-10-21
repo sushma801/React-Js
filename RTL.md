@@ -34,7 +34,7 @@ getByRole, and getByLabelText, which align with how users and screen readers int
 <li><b>Encourages best practices:</b> It pushes developers toward writing maintainable tests that can survive
 refactoring since the tests focus on the output of the component rather than internal details.</li>
     
-
+####
 <img src="./images/RTL/RTL_Example.png"/>
 
 #### In this example:
