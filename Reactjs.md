@@ -718,7 +718,7 @@ component with enhanced functionality.
     </ol>
 
 
-6. #    Readability and Conciseness
+6.   #    Readability and Conciseness
       <ol>
    
     **Functional Component**: Tend to be more concise and easier to read, especially for simple UI components or logic.
