@@ -1,12 +1,11 @@
 <li><a href="#hoisting">Hoisting</a></li>
 <li><a href="#letAndConst">Difference between let and const</a></li>
 <li><a href="#EventLoop">What is Event loop?</a></li>
+<li><a href="#jsDataTypes">JavaScript Data Type</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
-<li><a href=""></a></li>
-
 
 
 
@@ -73,7 +72,38 @@ Event loop always check if the call stack is empty or not if the call stack is e
 the callback queue for the execution of non-blocking callbacks.but if there is any promise code 
 then event loop first take care of micro-task queue and then callback queue.
 
-<img src="./images/JS/event_loop1.png>
+<img src="./images/JS/event_loop1.png">
+
+
+</div>
+
+
+<div id="jsDataTypes">
+
+# JavaScript Data Types
+In JavaScript, data types are divided into two main categories:
+
+1. **Primitive Data Types (Simple, Immutable)**:
+
+These are simple, immutable data types that store single values.
+JavaScript has 7 primitive data type.
+
+<img src="./images/JS/primitiveDataType.png">
+<img src="./images/JS/primitiveDataTypeEx.png">
+
+
+2. **Non-Primitive Data Types (Complex, Mutable)**:
+
+These are complex, mutable data types that store collections of values or objects
+
+<img src="./images/JS/primitiveDataType.png">
+<img src="./images/JS/nonPrimitiveTypeEx.png">
+
+### Difference Between Primitive and Non-Primitive Type
+
+
+<img src="./images/JS/diffPriandNonPri.png">
+
 
 
 </div>
