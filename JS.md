@@ -2,10 +2,13 @@
 <li><a href="#letAndConst">Difference between let and const</a></li>
 <li><a href="#EventLoop">What is Event loop?</a></li>
 <li><a href="#jsDataTypes">JavaScript Data Type</a></li>
+<li><a href="#restAndSpread"> Rest Operators and Spread Operators</a></li>
+<li><a href="#deepAndShallow">Deep Copy And Shallow Copy</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
+
+
+
 
 
 
@@ -105,5 +108,86 @@ These are complex, mutable data types that store collections of values or object
 <img src="./images/JS/diffPriandNonPri.png">
 
 
+
+</div>
+
+
+<div id="restAndSpread">
+
+## Rest Operators
+The rest operator collects multiple elements into a single array or object. 
+It is used in function parameter lists or destructuring assignments to handle an indefinite number of elements.
+
+**Usage in Function Parameter**: It collects arguments in an array
+
+<img src="./images/JS/RestOperator.png">
+
+
+**Usage in Destructuring**: It collect the rest of the property or elements
+<img src ="./images/Js/RestOperator2.png"> 
+
+
+## Spread Operators
+The spread operator expands an array or object into individual elements. 
+It is used in arrays, objects, and function calls to "spread" values.
+
+**Usage in Arrays**:
+It spread array elements
+
+<img src="./images/JS/spreadOprator1.png">
+
+**Usage in Objects**:
+It spread object elements
+
+<img src="./images/JS/spreadOprator2.png>
+
+**Usage in function Calls**:
+It spread array elements as arguments
+
+<img src="./images/JS/spreadOperatoe3.png">
+
+
+## The Key Difference between rest Operator and Spread Operator is:
+**Rest Operator** gathers multiple elements into one where as
+**Spread Operator** spread multiple elements into individual one.
+
+
+
+</div>
+
+<div id="deepAndShallow">
+
+# Shallow Copy
+A shallow copy duplicates the outermost structure but not the nested objects or arrays inside it. 
+If the original object contains references to other objects, those references are shared between the 
+original and the copy. Changes to nested objects will affect both the original and the copy.
+
+1. using Object spread operator
+
+<img src="./images/JS/shallow1.png">
+
+2. using Object.assign
+<img src="./images/JS/shallow2.png">
+
+3. Array example
+<img src="./images/JS/shallow3.png">
+
+# deep Copy
+A deep copy duplicates the entire structure, including nested objects and arrays. 
+Changes to the copied object or its nested properties do not affect the original.
+
+1. Using JSON.parse and JSON.stringify
+
+<img src="./images/JS/deep1.png">
+
+2. Using a Library (e.g Lodash)
+<img src="./images/JS/deep2.png">
+
+
+
+**Limitations**:
+
+1. Cannot handle functions or undefined.
+2. Loses reference to classes or special objects (like Date).
 
 </div>
