@@ -1,13 +1,23 @@
 <li><a href="#hoisting">Hoisting</a></li>
 <li><a href="#letAndConst">Difference between let and const</a></li>
+<li><a href="#TDZ">Temporal Dead Zone</a></li>
 <li><a href="#EventLoop">What is Event loop?</a></li>
 <li><a href="#jsDataTypes">JavaScript Data Type</a></li>
 <li><a href="#restAndSpread"> Rest Operators and Spread Operators</a></li>
 <li><a href="#deepAndShallow">Deep Copy And Shallow Copy</a></li>
+<li><a href="#closure">Closure</a></li>
+<li><a href="#promise">Promise</a></li>
+<li><a href="#asyncAwait">Async/await</a></li>
+<li><a href="#callback-hell">Callback Hell</a></li>
+<li><a href="#curring">Curring</a></li>
+<li><a href="#curring_problem">Solve the mul(2)(3)(4)</a></li>
+<li><a href="#iife">IIFE</a></li>
+<li><a href="#prototype">Prototype and __proto__</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
-
-
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
 
 
 
@@ -63,6 +73,28 @@ They remain in the Temporal Dead Zone (TDZ) until the line of code where they ar
 
 </div>
 
+<div id="TDZ">
+
+# Temporal Dead Zone
+The concept of the Temporal Dead Zone (TDZ) in JavaScript refers to the time 
+between entering a scope (like a block or function) and the point where a 
+variable declared with let or const is initialized. During this time, the 
+variable is in an uninitialized state and cannot be accessed. 
+Attempting to access the variable during the TDZ will result in a ReferenceError.
+
+<img src="./images/JS/TDZ.png">
+
+### Key Points About the Temporal Dead Zone
+1. **Scope is Block-Level**: Variables declared with let and const are block-scoped 
+    and enter the TDZ from the start of their enclosing block until their initialization.
+
+2. **Access During TDZ is an Error**: Accessing a variable in the TDZ throws a ReferenceError.
+
+3. **Variable Hoisting**: While variables declared with let and const are hoisted to the 
+    top of their scope, they are not initialized and remain in the TDZ.
+
+</div>
+
 <div id="EventLoop">
 
 # Event Loop
@@ -92,6 +124,8 @@ These are simple, immutable data types that store single values.
 JavaScript has 7 primitive data type.
 
 <img src="./images/JS/primitiveDataType.png">
+
+
 <img src="./images/JS/primitiveDataTypeEx.png">
 
 
@@ -100,6 +134,8 @@ JavaScript has 7 primitive data type.
 These are complex, mutable data types that store collections of values or objects
 
 <img src="./images/JS/primitiveDataType.png">
+
+
 <img src="./images/JS/nonPrimitiveTypeEx.png">
 
 ### Difference Between Primitive and Non-Primitive Type
@@ -124,6 +160,7 @@ It is used in function parameter lists or destructuring assignments to handle an
 
 
 **Usage in Destructuring**: It collect the rest of the property or elements
+
 <img src ="./images/Js/RestOperator2.png"> 
 
 
@@ -172,7 +209,7 @@ original and the copy. Changes to nested objects will affect both the original a
 3. Array example
 <img src="./images/JS/shallow3.png">
 
-# deep Copy
+# Deep Copy
 A deep copy duplicates the entire structure, including nested objects and arrays. 
 Changes to the copied object or its nested properties do not affect the original.
 
@@ -190,4 +227,180 @@ Changes to the copied object or its nested properties do not affect the original
 1. Cannot handle functions or undefined.
 2. Loses reference to classes or special objects (like Date).
 
+<img src="./images/JS/diffDeepAndShallow.png">
+
 </div>
+
+
+
+
+<div id="closure">
+
+# Closure
+
+A closure in JavaScript is a feature where an inner function "remembers" and can access variables from 
+its outer function's scope even after the outer function has finished executing. 
+This allows functions to retain access to their defining scope, creating a persistent environment.
+
+## How Closures Work
+1. A function is created inside another function.
+2. The inner function retains access to the outer function’s variables and parameters.
+3. Even if the outer function has returned, the inner function can still access those variables.
+
+<img src="./images/JS/closure.png">
+
+### Key Takeaways
+1. Closures "remember" the scope where they were created.
+2. They are powerful for creating encapsulated and modular code.
+3. Use them carefully to avoid potential pitfalls like excessive memory usage or bugs caused by unexpected variable references.
+
+
+</div>
+
+
+
+
+<div id="promise">
+
+# Promise
+
+A Promise in JavaScript represents the eventual completion (or failure) of an asynchronous 
+operation and its resulting value. Promises are a built-in feature introduced in ES6 to 
+handle asynchronous operations in a more organized and manageable way compared to 
+traditional callback functions.
+1. **Handling Asynchronous Operations**: Promises provide a way to work with asynchronous 
+    code in a more sequential and readable manner.
+2. **States**: Promises have three possible states: pending (initial state), 
+    fulfilled (operation completed successfully), and rejected (operation failed).
+3. **Methods**: Promises have methods like then() to handle successful completion, 
+    catch() to handle errors, and finally() to execute code after either fulfillment or rejection.
+
+    <img src="./images/JS/promise.png">
+
+</div>
+
+<div id="asyncAwait">
+
+# Async/await
+
+async and await are newer features introduced in ES8/ES2017 that provide a more 
+concise and cleaner syntax for working with promises and asynchronous code.
+
+**Syntax**: async functions return a promise implicitly and allow the use of await
+within them to pause execution until a promise settles (either resolves or rejects).
+
+**Sequential Code**: await can be used to write asynchronous code that looks and 
+behaves like synchronous code, making it easier to understand and maintain.
+
+**Error Handling**: Error handling is simplified using try-catch blocks around await expressions.
+
+
+  <img src="./images/JS/asyncawait.png">
+
+</div>
+
+<div id="callback_hell">
+
+# Callback Hell
+
+**Callback hell** is a term used to describe a situation in asynchronous programming where 
+multiple nested callbacks make the code difficult to read and maintain. This typically occurs 
+when you have a sequence of asynchronous operations that depend on the result of the previous 
+operation, leading to deeply nested callback functions. This nesting can lead to code that 
+is hard to follow and debug, often referred to as "pyramid of doom."
+
+
+<img src="./images/JS/callback_Hell.png">
+
+As the number of nested callbacks increases, the code becomes more complex and harder to maintain.
+</div>
+
+
+
+<div id="curring">
+
+# Curring
+**Currying** is the process of taking a function with multiple arguments and 
+turning it into a sequence of functions each with only a single argument.
+
+<img src="./images/JS/curring.png">
+
+### Why Use Currying?
+1. **Reusability**: You can create specialized functions by partially applying arguments.
+
+<img src="./images/JS/curring1.png">
+
+2. **Readability**: Makes function chaining and composition easier.
+
+3. **Immutability**: Helps to write pure functions with predictable outcomes.
+
+### Key Takeaways
+1. Currying transforms a multi-argument function into a chain of single-argument functions.
+2. Useful for function composition, partial application, and creating more reusable, readable code.
+3. Can be implemented manually or through libraries like Lodash (_.curry).
+
+</div>
+
+
+<div id="curring_problem">
+
+# 
+### Solve the mul(2)(3)(4)
+
+<img src="./images/JS/mul_curring1.png">
+
+#
+</div>
+
+<div id="iife">
+
+# IIFE (Immediately Invoked Function Expression) 
+IIFE is a JavaScript function that runs as soon as it is defined.
+It allows you to create a private scope to avoid polluting the global namespace and execute code directly
+The signature of it would be as below,
+
+<img src="./images/JS/iife_syntax.png">
+
+### Why Use IIFE?
+
+1. **Avoid Global Scope Pollution**
+Variables inside the IIFE are not accessible outside, keeping the global namespace clean.
+
+2. **Data Privacy**
+Encapsulates code to create private variables and functions.
+
+3. **Module Pattern**
+Used for creating modules before ES6 modules were introduced.
+
+<img src="./images/JS/iife2.png">
+
+</div>
+
+<div id="#prototype">
+
+# Prototype
+The prototype is an object that is associated with every function and object by default. 
+When a function is used as a constructor (with the new keyword), the newly created 
+object inherits properties and methods from the constructor's prototype.
+
+<img src="./images/JS/prototype.png">
+
+# __proto__: 
+The __proto__ property is an internal property of an object that points to 
+the prototype object from which it inherits properties and methods. 
+This property is part of the prototype chain mechanism.
+
+<img src="./images/JS/prototyAndproto.png">
+
+# Prototype Chain
+
+The prototype chain is the mechanism by which JavaScript objects inherit properties 
+and methods from other objects. When you try to access a property or method of an object, 
+JavaScript first looks at the object itself. If the property or method is not found, 
+it looks at the object's prototype (__proto__). This process continues up the 
+chain until the property or method is found or until the chain ends with null.
+
+
+
+</div>
+
