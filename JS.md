@@ -13,8 +13,8 @@
 <li><a href="#curring_problem">Solve the mul(2)(3)(4)</a></li>
 <li><a href="#iife">IIFE</a></li>
 <li><a href="#prototype">Prototype and __proto__</a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
+<li><a href="#event">Event Delegations, Event Bubbling and Event Capturing</a></li>
+<li><a href="#treeShaking">Tree Shaking</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
@@ -161,7 +161,7 @@ It is used in function parameter lists or destructuring assignments to handle an
 
 **Usage in Destructuring**: It collect the rest of the property or elements
 
-<img src ="./images/Js/RestOperator2.png"> 
+<img src ="./images/JS/RestOperator2.png"> 
 
 
 ## Spread Operators
@@ -204,9 +204,11 @@ original and the copy. Changes to nested objects will affect both the original a
 <img src="./images/JS/shallow1.png">
 
 2. using Object.assign
+
 <img src="./images/JS/shallow2.png">
 
 3. Array example
+
 <img src="./images/JS/shallow3.png">
 
 # Deep Copy
@@ -218,6 +220,7 @@ Changes to the copied object or its nested properties do not affect the original
 <img src="./images/JS/deep1.png">
 
 2. Using a Library (e.g Lodash)
+
 <img src="./images/JS/deep2.png">
 
 
@@ -401,6 +404,86 @@ it looks at the object's prototype (__proto__). This process continues up the
 chain until the property or method is found or until the chain ends with null.
 
 
+
+</div>
+
+<div id="event">
+
+# Event Delegation
+
+Event delegation is a technique in JavaScript where you attach an event 
+listener to a parent element instead of attaching event listeners to multiple 
+child elements individually. This parent element then listens for events bubbling 
+up from its children. When an event occurs, it can be handled by checking the 
+event target (the element that triggered the event) and deciding what action to take based on the target.
+
+### Event delegation is particularly useful in scenarios where:
+
+1. **Dynamic Content**: When elements are added or removed dynamically, event delegation ensures 
+that newly added elements automatically have event listeners without needing to attach listeners manually.
+
+2. **Performance**: It reduces the number of event listeners, which can improve performance, 
+especially when dealing with large numbers of elements.
+
+3. **Simplicity**: It simplifies event management, especially in complex DOM structures 
+or single-page applications where managing individual event listeners for each element can become cumbersome.
+
+# Event Bubbling
+Event bubbling is the default behavior in which an event triggered on a nested element 
+propagates upwards through its ancestors in the DOM tree. After the event handler on the 
+target element executes, the event bubbles up to its parent element, then to the parent's parent, 
+and so on, until it reaches the root of the document (<html>).
+
+<img src="./images/JS/event_bubbling.png">
+
+If you click the "Click Me" button (button id="child"), 
+the event handling sequence in bubbling would be:
+
+1. Event triggered on #child (button).
+2. Event handler on #child executes.
+3. Event bubbles up to #parent (div).
+4. Event handler on #parent executes (if present).
+5. Event continues to bubble up to the document root (<html>) and then to window.
+
+# Event Capturing
+
+Event capturing is the opposite of event bubbling. In event capturing, 
+the event is first captured by the outermost element (window), then propagated 
+downwards through its descendants to the target element. This phase 
+occurs before the actual event reaches the target element.
+
+
+</div>
+
+<div id="treeShaking">
+
+# Tree Shaking
+
+**Tree shaking** is a term used in the context of JavaScript module bundling 
+(like with tools such as Webpack or Rollup). It refers to the process of eliminating 
+dead code (unused modules or code paths) from your final bundle. This optimization 
+technique helps reduce the bundle size, improving load times and overall application performance.
+
+### How Tree Shaking Works
+1. **Module System**: Tree shaking works best with ES6 modules (import/export syntax) 
+because it relies on static analysis of the code's import/export statements 
+to determine which modules are actually used.
+
+2. **Static Analysis**: During the bundling process, the bundler (e.g., Webpack) 
+statically analyzes the code to create a dependency graph of all modules and their dependencies.
+
+3. **Unused Code Detection**: The bundler then identifies which modules and parts of 
+modules are not imported or used anywhere in the application.
+
+4. **Dead Code Elimination**: Modules and code paths that are identified as unused are 
+eliminated (shaken off) from the final bundle. This reduces the bundle size without 
+impacting the functionality of the application.
+
+<img src="./images/JS/tree_shaking.png">
+
+In this example, if cube function from math.js is not used anywhere else in the application, 
+
+a properly configured bundler with tree shaking enabled will exclude the cube function from the final bundle.
 
 </div>
 
