@@ -2,6 +2,8 @@
 <li><a href="#reduxApp">Explain the structure of redux application</a></li>
 <li><a href="#actions">What is the role of actions in Redux? Can you provide an example?</a></li>
 <li><a href="#connectFunction">What is the purpose of connect() in Redux?</a></li>
+<li><a href="#mapStateAndDispatch">What is mapStateToProps and mapDispatchToProps</a></li>
+<li><a href="#hook">Redux Hook</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
@@ -12,9 +14,6 @@
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-
 
 
 
@@ -97,7 +96,7 @@ Examples: redux-thunk, redux-saga.
 Functions to encapsulate and reuse logic for accessing specific parts of the state.
 They help keep components clean by abstracting state access logic.
 
-<img src="./images/redux/store.png">
+<img src="./images/redux/selector.png">
 
 
 </div>
@@ -132,10 +131,99 @@ and providing it with functions to dispatch actions.
 3. **Separate Concerns**: Keeps the component logic separate from the Redux store, 
 making the component more reusable and easier to test.
 
-**Syntax**
+**Syntax**:
+
+
 <img src="./images/redux/connect.png">
 
 </div>
+
+
+<div id="mapStateAndDispatch">
+
+# mapStateToProps
+**mapStateToProps** is a function that takes the Redux state as its first argument 
+and maps parts of that state to the component's props. This allows the component 
+to access specific slices of the Redux state.
+
+**Purpose**
+To specify what parts of the Redux state the component needs and map them as props.
+
+**Syntax**:
+
+<img src="./images/redux/mapStateToprops.png">
+
+**Example**
+If your Redux state looks like this:
+
+<img src="./images/redux/initialState.png">
+
+You can map the counter value to your component like this:
+
+<img src="./images/redux/mapStateToPropsEx.png">
+
+In your component:
+
+<img src="./images/redux/componentView.png">
+
+
+# mapDispatchToProps
+
+**mapDispatchToProps** is a function that takes the dispatch function as its 
+first argument and maps action dispatching functions to the component's props. 
+This allows the component to dispatch actions to the Redux store.
+
+**Purpose**
+To create functions that dispatch actions and make them available as props in the component.
+
+**Syntax**
+
+<img src="./images/redux/mapDispatchToProps.png">
+
+**Example**
+
+<img src="./images/redux/mapDispatchToPropsEx.png">
+
+</div>
+
+<div id="hook">
+
+**Redux hooks** are part of the React Redux library and provide a simpler and more modern way
+to interact with the Redux store in functional components. They eliminate the need for the 
+**connect()** function and allow you to directly access the store and dispatch actions.
+
+The two main hooks provided by React Redux are
+
+1. ### useSelector()
+The useSelector hook allows you to access specific parts of the Redux state.
+
+**Syntax**
+
+**const selectedState = useSelector((state) => state.someSlice);**
+
+**example**:
+<img src="./images/redux/selectorEx.png">
+
+2. ### useDispatch()
+The useDispatch hook provides a reference to the dispatch function, 
+which is used to dispatch actions to the Redux store.
+
+**Syntax**
+
+**const dispatch = useDispatch();**
+**dispatch(action);**
+
+**example**
+<img src="./images/redux/useDispatchEx.png">
+
+### Benefits of Redux Hooks
+1. **Simplicity**: Hooks are simpler and require less boilerplate compared to connect().
+2. **Component Independence**: Components no longer need to be wrapped in connect(), making them more reusable.
+3. **Better TypeScript Support**: Type inference is easier with hooks.
+4. **Direct Access**: Hooks allow direct access to the state and dispatch functions.
+
+</div>
+
 
 
 
