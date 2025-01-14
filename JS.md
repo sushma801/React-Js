@@ -39,9 +39,9 @@ Before the code starts running (when the script is loaded).
 
 **What happens in this phase?**
 
-Memory Allocation: Variables, functions, and classes are scanned and allocated memory.
-Hoisting: Function declarations, var, let, const, and class declarations are "hoisted" to the top of their scope.
-Scope Creation: The execution context (Global or Function) is created, and the Lexical Environment is set up.
+(a). **Memory Allocation**: Variables, functions, and classes are scanned and allocated memory.
+(b). **Hoisting**: Function declarations, var, let, const, and class declarations are "hoisted" to the top of their scope.
+(c). **Scope Creation**: The execution context (Global or Function) is created, and the Lexical Environment is set up.
 
 2. **Execution Phase (Code Execution)**:
 
@@ -51,10 +51,10 @@ After the compilation phase, once the execution context is ready, JavaScript sta
 
 **What happens in this phase?**
 
-Code Execution Line-by-Line: The interpreter reads and executes each line of code.
-Initialization and Assignment: Variables that were allocated during the compilation phase are now assigned values.
-Function Calls: When a function is called, a new execution context is created for that function.
-Garbage Collection: After execution, unused variables and references are cleaned up to free memory.
+(a). **Code Execution Line-by-Line**: The interpreter reads and executes each line of code.
+(b). **Initialization and Assignment**: Variables that were allocated during the compilation phase are now assigned values.
+(c). **Function Calls**: When a function is called, a new execution context is created for that function.
+(d). **Garbage Collection**: After execution, unused variables and references are cleaned up to free memory.
 
 <img src="./images/JS/Hoisting.png">
 
