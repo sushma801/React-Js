@@ -1,18 +1,18 @@
 <li><a href="#hoisting">Hoisting</a></li>
+<li><a href="#jsDataTypes">JavaScript Data Type</a></li>
 <li><a href="#letAndConst">Difference between let and const</a></li>
 <li><a href="#TDZ">Temporal Dead Zone</a></li>
-<li><a href="#EventLoop">What is Event loop?</a></li>
-<li><a href="#jsDataTypes">JavaScript Data Type</a></li>
 <li><a href="#restAndSpread"> Rest Operators and Spread Operators</a></li>
 <li><a href="#deepAndShallow">Deep Copy And Shallow Copy</a></li>
-<li><a href="#closure">Closure</a></li>
-<li><a href="#promise">Promise</a></li>
-<li><a href="#asyncAwait">Async/await</a></li>
-<li><a href="#callback-hell">Callback Hell</a></li>
 <li><a href="#curring">Curring</a></li>
 <li><a href="#curring_problem">Solve the mul(2)(3)(4)</a></li>
+<li><a href="#closure">Closure</a></li>
 <li><a href="#iife">IIFE</a></li>
 <li><a href="#prototype">Prototype and __proto__</a></li>
+<li><a href="#promise">Promise</a></li>
+<li><a href="#asyncAwait">Async/await</a></li>
+<li><a href="#EventLoop">What is Event loop?</a></li>
+<li><a href="#callback-hell">Callback Hell</a></li>
 <li><a href="#event">Event Delegations, Event Bubbling and Event Capturing</a></li>
 <li><a href="#treeShaking">Tree Shaking</a></li>
 <li><a href=""></a></li>
@@ -32,7 +32,9 @@ Hoisting is a process where JavaScript moves all the declarations of functions a
 ## How Hoisting is Working:
 A javascript Program is running into two phases 1. Compilation Phase 2. Execution Phase
 1. **Compilation Phase (Memory Allocation)**: 
+
 **When does it happen?**
+
 Before the code starts running (when the script is loaded).
 
 **What happens in this phase?**
@@ -42,7 +44,9 @@ Hoisting: Function declarations, var, let, const, and class declarations are "ho
 Scope Creation: The execution context (Global or Function) is created, and the Lexical Environment is set up.
 
 2. **Execution Phase (Code Execution)**:
+
 **When does it happen?**
+
 After the compilation phase, once the execution context is ready, JavaScript starts running the code line-by-line.
 
 **What happens in this phase?**
@@ -133,7 +137,7 @@ JavaScript has 7 primitive data type.
 
 These are complex, mutable data types that store collections of values or objects
 
-<img src="./images/JS/primitiveDataType.png">
+<img src="./images/JS/nonPrimivtiveDataType.png">
 
 
 <img src="./images/JS/nonPrimitiveTypeEx.png">
@@ -176,7 +180,7 @@ It spread array elements
 **Usage in Objects**:
 It spread object elements
 
-<img src="./images/JS/spreadOprator2.png>
+<img src="./images/JS/spreadOprator2.png">
 
 **Usage in function Calls**:
 It spread array elements as arguments
