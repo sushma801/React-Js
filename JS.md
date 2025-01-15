@@ -15,7 +15,7 @@
 <li><a href="#callback-hell">Callback Hell</a></li>
 <li><a href="#event">Event Delegations, Event Bubbling and Event Capturing</a></li>
 <li><a href="#treeShaking">Tree Shaking</a></li>
-<li><a href=""></a></li>
+<li><a href="#callBindApply">Call Bind and Apply</a></li>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
 
@@ -490,4 +490,33 @@ In this example, if cube function from math.js is not used anywhere else in the 
 a properly configured bundler with tree shaking enabled will exclude the cube function from the final bundle.
 
 </div>
+
+
+
+<div id="callBindApply">
+
+# Call:
+Call method is used to borrow the method. We can passed multiple argument as parameter as individual in call method.
+
+<img src="./images/JS/call.png">
+
+<img src="./images/JS/callEx2.png">
+
+# Apply:
+Apply method is also used to borrow the method. But here we can pass multiple arguments in a single form of array.
+
+
+<img src="./images/JS/applyEx1.png">
+
+<img src="./images/JS/applyEx2.png">
+
+# Bind:
+it return a new function and allow you to pass any number of arguments.The bind() method does not call the function
+immediately but instead returns a new function that can be called later:
+
+<img src="./images/JS/bindex.png">
+
+
+</div>
+
 
